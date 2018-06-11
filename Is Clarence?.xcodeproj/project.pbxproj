@@ -8,12 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		11BB3FCF20CA092500B44A92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB3FCE20CA092500B44A92 /* AppDelegate.swift */; };
-		11BB3FD120CA092500B44A92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB3FD020CA092500B44A92 /* ViewController.swift */; };
+		11BB3FD120CA092500B44A92 /* CJViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB3FD020CA092500B44A92 /* CJViewController.swift */; };
 		11BB3FD420CA092500B44A92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11BB3FD220CA092500B44A92 /* Main.storyboard */; };
 		11BB3FD620CA092700B44A92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11BB3FD520CA092700B44A92 /* Assets.xcassets */; };
 		11BB3FD920CA092700B44A92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11BB3FD720CA092700B44A92 /* LaunchScreen.storyboard */; };
 		11BB3FE420CA092700B44A92 /* Is_Clarence_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB3FE320CA092700B44A92 /* Is_Clarence_Tests.swift */; };
 		11BB3FEF20CA092700B44A92 /* Is_Clarence_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB3FEE20CA092700B44A92 /* Is_Clarence_UITests.swift */; };
+		11BB3FFD20CA099900B44A92 /* ClarenceClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 11BB3FFC20CA099900B44A92 /* ClarenceClassifier.mlmodel */; };
+		11BB400120CAF57000B44A92 /* CJClarenceClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB400020CAF57000B44A92 /* CJClarenceClassifier.swift */; };
+		11CC91E120CEF9130065E784 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC91D820CEF6F30065E784 /* Math.swift */; };
+		11CC91E220CEF9130065E784 /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC91D920CEF6F30065E784 /* UIImage+CVPixelBuffer.swift */; };
+		11CC91E320CEF9130065E784 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC91DA20CEF6F30065E784 /* Array.swift */; };
+		11CC91E420CEF9130065E784 /* Predictions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC91DB20CEF6F30065E784 /* Predictions.swift */; };
+		11CC91E520CEF9130065E784 /* MultiArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC91DC20CEF6F30065E784 /* MultiArray.swift */; };
+		11CC91E620CEF9130065E784 /* CVPixelBuffer+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC91DD20CEF6F30065E784 /* CVPixelBuffer+Helpers.swift */; };
+		11CC91E720CEF9130065E784 /* NonMaxSuppression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC91DE20CEF6F30065E784 /* NonMaxSuppression.swift */; };
+		11CC91E820CEF9130065E784 /* MLMultiArray+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC91DF20CEF6F30065E784 /* MLMultiArray+Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +46,7 @@
 /* Begin PBXFileReference section */
 		11BB3FCB20CA092400B44A92 /* Is Clarence?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Is Clarence?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11BB3FCE20CA092500B44A92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		11BB3FD020CA092500B44A92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		11BB3FD020CA092500B44A92 /* CJViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJViewController.swift; sourceTree = "<group>"; };
 		11BB3FD320CA092500B44A92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11BB3FD520CA092700B44A92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11BB3FD820CA092700B44A92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +57,16 @@
 		11BB3FEA20CA092700B44A92 /* Is Clarence?UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Is Clarence?UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11BB3FEE20CA092700B44A92 /* Is_Clarence_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Is_Clarence_UITests.swift; sourceTree = "<group>"; };
 		11BB3FF020CA092700B44A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11BB3FFC20CA099900B44A92 /* ClarenceClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ClarenceClassifier.mlmodel; sourceTree = "<group>"; };
+		11BB400020CAF57000B44A92 /* CJClarenceClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJClarenceClassifier.swift; sourceTree = "<group>"; };
+		11CC91D820CEF6F30065E784 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		11CC91D920CEF6F30065E784 /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
+		11CC91DA20CEF6F30065E784 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		11CC91DB20CEF6F30065E784 /* Predictions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Predictions.swift; sourceTree = "<group>"; };
+		11CC91DC20CEF6F30065E784 /* MultiArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiArray.swift; sourceTree = "<group>"; };
+		11CC91DD20CEF6F30065E784 /* CVPixelBuffer+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Helpers.swift"; sourceTree = "<group>"; };
+		11CC91DE20CEF6F30065E784 /* NonMaxSuppression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonMaxSuppression.swift; sourceTree = "<group>"; };
+		11CC91DF20CEF6F30065E784 /* MLMultiArray+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MLMultiArray+Image.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +101,7 @@
 				11BB3FE220CA092700B44A92 /* Is Clarence?Tests */,
 				11BB3FED20CA092700B44A92 /* Is Clarence?UITests */,
 				11BB3FCC20CA092400B44A92 /* Products */,
+				11CC91E020CEF7000065E784 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,11 +119,13 @@
 			isa = PBXGroup;
 			children = (
 				11BB3FCE20CA092500B44A92 /* AppDelegate.swift */,
-				11BB3FD020CA092500B44A92 /* ViewController.swift */,
+				11BB3FD020CA092500B44A92 /* CJViewController.swift */,
+				11BB400020CAF57000B44A92 /* CJClarenceClassifier.swift */,
 				11BB3FD220CA092500B44A92 /* Main.storyboard */,
 				11BB3FD520CA092700B44A92 /* Assets.xcassets */,
 				11BB3FD720CA092700B44A92 /* LaunchScreen.storyboard */,
 				11BB3FDA20CA092700B44A92 /* Info.plist */,
+				11BB3FFC20CA099900B44A92 /* ClarenceClassifier.mlmodel */,
 			);
 			path = "Is Clarence?";
 			sourceTree = "<group>";
@@ -123,6 +146,29 @@
 				11BB3FF020CA092700B44A92 /* Info.plist */,
 			);
 			path = "Is Clarence?UITests";
+			sourceTree = "<group>";
+		};
+		11CC91D720CEF6F30065E784 /* CoreMLHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				11CC91D820CEF6F30065E784 /* Math.swift */,
+				11CC91D920CEF6F30065E784 /* UIImage+CVPixelBuffer.swift */,
+				11CC91DA20CEF6F30065E784 /* Array.swift */,
+				11CC91DB20CEF6F30065E784 /* Predictions.swift */,
+				11CC91DC20CEF6F30065E784 /* MultiArray.swift */,
+				11CC91DD20CEF6F30065E784 /* CVPixelBuffer+Helpers.swift */,
+				11CC91DE20CEF6F30065E784 /* NonMaxSuppression.swift */,
+				11CC91DF20CEF6F30065E784 /* MLMultiArray+Image.swift */,
+			);
+			path = CoreMLHelpers;
+			sourceTree = "<group>";
+		};
+		11CC91E020CEF7000065E784 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11CC91D720CEF6F30065E784 /* CoreMLHelpers */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +233,7 @@
 		11BB3FC320CA092400B44A92 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = CJ;
 				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Clarence Ji";
@@ -256,8 +303,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11BB3FD120CA092500B44A92 /* ViewController.swift in Sources */,
+				11CC91E420CEF9130065E784 /* Predictions.swift in Sources */,
+				11CC91E620CEF9130065E784 /* CVPixelBuffer+Helpers.swift in Sources */,
+				11BB3FD120CA092500B44A92 /* CJViewController.swift in Sources */,
+				11CC91E220CEF9130065E784 /* UIImage+CVPixelBuffer.swift in Sources */,
+				11CC91E720CEF9130065E784 /* NonMaxSuppression.swift in Sources */,
+				11CC91E320CEF9130065E784 /* Array.swift in Sources */,
+				11CC91E520CEF9130065E784 /* MultiArray.swift in Sources */,
+				11BB400120CAF57000B44A92 /* CJClarenceClassifier.swift in Sources */,
+				11CC91E820CEF9130065E784 /* MLMultiArray+Image.swift in Sources */,
 				11BB3FCF20CA092500B44A92 /* AppDelegate.swift in Sources */,
+				11BB3FFD20CA099900B44A92 /* ClarenceClassifier.mlmodel in Sources */,
+				11CC91E120CEF9130065E784 /* Math.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
