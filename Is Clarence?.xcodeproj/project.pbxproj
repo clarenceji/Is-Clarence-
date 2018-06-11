@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1117138A20CF3224000F00D2 /* CJExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117138920CF3224000F00D2 /* CJExtensions.swift */; };
 		11BB3FCF20CA092500B44A92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB3FCE20CA092500B44A92 /* AppDelegate.swift */; };
 		11BB3FD120CA092500B44A92 /* CJViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB3FD020CA092500B44A92 /* CJViewController.swift */; };
 		11BB3FD420CA092500B44A92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11BB3FD220CA092500B44A92 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1117138920CF3224000F00D2 /* CJExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJExtensions.swift; sourceTree = "<group>"; };
 		11BB3FCB20CA092400B44A92 /* Is Clarence?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Is Clarence?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11BB3FCE20CA092500B44A92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11BB3FD020CA092500B44A92 /* CJViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				11BB3FCE20CA092500B44A92 /* AppDelegate.swift */,
 				11BB3FD020CA092500B44A92 /* CJViewController.swift */,
 				11BB400020CAF57000B44A92 /* CJClarenceClassifier.swift */,
+				1117138920CF3224000F00D2 /* CJExtensions.swift */,
 				11BB3FD220CA092500B44A92 /* Main.storyboard */,
 				11BB3FD520CA092700B44A92 /* Assets.xcassets */,
 				11BB3FD720CA092700B44A92 /* LaunchScreen.storyboard */,
@@ -311,6 +314,7 @@
 				11CC91E320CEF9130065E784 /* Array.swift in Sources */,
 				11CC91E520CEF9130065E784 /* MultiArray.swift in Sources */,
 				11BB400120CAF57000B44A92 /* CJClarenceClassifier.swift in Sources */,
+				1117138A20CF3224000F00D2 /* CJExtensions.swift in Sources */,
 				11CC91E820CEF9130065E784 /* MLMultiArray+Image.swift in Sources */,
 				11BB3FCF20CA092500B44A92 /* AppDelegate.swift in Sources */,
 				11BB3FFD20CA099900B44A92 /* ClarenceClassifier.mlmodel in Sources */,

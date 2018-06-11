@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CJViewController.swift
 //  Is Clarence?
 //
 //  Created by Clarence Ji on 6/7/18.
@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import CoreML
 
 class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
 
@@ -15,6 +16,10 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVCapture
     @IBOutlet private var captureButton: UIButton!
     @IBOutlet private var isClarenceLabel: UILabel!
     @IBOutlet private var notClarenceLabel: UILabel!
+    
+    // UI & Strings
+    private let isClarenceString = "✅ Is Clarence"
+    private let notClarenceString = "❌ Not Clarence"
     
     // Camera
     private let captureSession = AVCaptureSession()
@@ -124,17 +129,23 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVCapture
     
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         guard error == nil, let photoData = photo.fileDataRepresentation() else {
-            print("[CJ] photoData is nil")
+            print("[CJ] /!\\ photoData is nil")
             return
         }
         guard let image = UIImage(data: photoData) else {
-            print("[CJ] UIImage is nil")
+            print("[CJ] /!\\ UIImage is nil")
             return
         }
         
         do {
+            
+            guard let croppedImage = image.cropped(boundingBox: CGRect(x: image.size.width / 2, y: image.size.height / 2, width: 299, height: 299)) else {
+                print("[CJ] /!\\ Unable to crop image")
+                return
+            }
+            
             print("[CJ] Generating Pixel Buffer")
-            let cvPixelBuffer = image.pixelBuffer(width: Int(image.size.width), height: Int(image.size.height))
+            let cvPixelBuffer = croppedImage.pixelBuffer(width: 299, height: 299)
             let output = try classifier.prediction(image: cvPixelBuffer!)
             print("Class label - \(output.classLabel)")
             self.displayResult(output)
@@ -146,23 +157,32 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVCapture
     }
     
     private func displayResult(_ result: ClarenceClassifierOutput) {
-        func toggleLabels(_ isClarence: Bool) {
-            let label: UILabel = isClarence ? isClarenceLabel : notClarenceLabel
-            UIView.animate(withDuration: 0.2, animations: {
-                label.alpha = 1.0
-            }) { (_) in
-                UIView.animate(withDuration: 0.3, delay: 2, options: .curveEaseIn, animations: {
-                    label.alpha = 0.0
-                }, completion: nil)
+        func toggleLabels(_ isClarence: Bool, _ confidence: String) {
+            DispatchQueue.main.async {
+                self.isClarenceLabel.alpha = 0
+                self.isClarenceLabel.textColor = isClarence ? #colorLiteral(red: 0.4235294118, green: 0.8078431373, blue: 0.4039215686, alpha: 1) : #colorLiteral(red: 0.8919706941, green: 0.3084927201, blue: 0.3301423192, alpha: 1)
+                let labelString = (isClarence ? self.isClarenceString : self.notClarenceString) + confidence
+                self.isClarenceLabel.text = labelString
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.isClarenceLabel.alpha = 1.0
+                }) { (_) in
+                    UIView.animate(withDuration: 0.3, delay: 2, options: .curveEaseIn, animations: {
+                        self.isClarenceLabel.alpha = 0.0
+                    }, completion: nil)
+                }
             }
         }
         
+        let classLabelProb = 100 * (result.classLabelProbs[result.classLabel] ?? 0)
+        let confidence = " (\(round(100 * classLabelProb) / 100)%)"
+        
+        
         switch result.classLabel {
         case "Clarence":
-            toggleLabels(true)
+            toggleLabels(true, confidence)
             
         case "Not Clarence":
-            toggleLabels(false)
+            toggleLabels(false, confidence)
             
             
         default:
@@ -189,38 +209,6 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVCapture
     
     private var isBackCamera = true
     @IBAction func switchCameraButtonTapped(_ sender: Any) {
-        
-//        self.captureSession.beginConfiguration()
-//
-//        guard let currentInput = captureSession.inputs.first else { return }
-//
-//        captureSession.removeInput(currentInput
-//
-//        let newCamera = AVCaptureDevice.init(uniqueID: <#T##String#>)
-//        if(((AVCaptureDeviceInput*)currentCameraInput).device.position == AVCaptureDevicePositionBack)
-//        {
-//            newCamera = [self cameraWithPosition:AVCaptureDevicePositionFront];
-//        }
-//        else
-//        {
-//            newCamera = [self cameraWithPosition:AVCaptureDevicePositionBack];
-//        }
-//
-//        NSError *err = nil;
-//
-//        AVCaptureDeviceInput *newVideoInput = [[AVCaptureDeviceInput alloc] initWithDevice:newCamera error:&err];
-//
-//        if(!newVideoInput || err)
-//        {
-//            NSLog(@"Error creating capture device input: %@", err.localizedDescription);
-//        }
-//        else
-//        {
-//            [session addInput:newVideoInput];
-//        }
-//
-//        [session commitConfiguration];
-        
     }
     
 }
